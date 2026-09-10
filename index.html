@@ -144,7 +144,7 @@
   /* ---------- hero ---------- */
   .hero{
     padding: 88px 0 96px;
-    max-width: 850px; /* трохи звужуємо для кращого читання тексту */
+    max-width: 900px;
   }
   .hero-eyebrow{
     color: var(--muted);
@@ -152,12 +152,13 @@
     margin-bottom: 18px;
   }
   
-  /* Блок для заголовка та маленької гіфки зліва */
-  .hero-title-wrapper {
+  /* Контейнер: ставимо гіфку і заголовок в один рядок */
+  .hero-title-row {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
     flex-wrap: wrap;
+    margin-bottom: 0;
   }
   .mini-gif {
     width: 100px;
@@ -362,9 +363,9 @@
   <section id="hero" class="hero wrap" style="border-top:none;">
     <p class="hero-eyebrow">SMM-дизайн · оформлення соцмереж · Львів</p>
     
-    <!-- Гіфка (100px) зліва від заголовка -->
-    <div class="hero-title-wrapper">
-      <img src="назва_твоєї_гіфки.gif" alt="Анімація" class="mini-gif">
+    <!-- Рядок з гіфкою та заголовком -->
+    <div class="hero-title-row">
+      <img src="animation.gif" alt="Анімація" class="mini-gif">
       <h1>пупупу<span>пупупуп</span> пуппуу.</h1>
     </div>
 
