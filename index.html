@@ -282,12 +282,20 @@
   .about-body{ max-width: 62ch; color: var(--ink); }
   .about-lede{ font-size: 1.15rem; }
 
-  .tools{
+ .tools {
     margin-top: 36px;
-    display:grid;
-    grid-template-columns: repeat(2, minmax(0,1fr));
-    gap: 0 32px;
-  }
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 20px;
+}
+
+.tools img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
   .tools li{
     padding: 12px 0;
     border-top: 1px solid var(--line);
