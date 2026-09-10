@@ -140,13 +140,7 @@
     .nav-links.is-open{ max-height: 300px; }
     .nav-links a{ padding: 16px 24px; border-bottom: 1px solid var(--line); }
   }
-.mini-gif {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-   border-radius: 50%;
-    flex-shrink: 0;
-  }
+
   /* ---------- hero ---------- */
   .hero{
     padding: 88px 0 96px;
@@ -170,7 +164,7 @@
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 50%;
     flex-shrink: 0;
   }
 
@@ -344,13 +338,6 @@
     font-style: normal;
   }
 </style>
-  .mini-gif {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%; /* <--- ось тут */
-    flex-shrink: 0;
-  }
 </head>
 <body>
 
@@ -376,7 +363,6 @@
   <section id="hero" class="hero wrap" style="border-top:none;">
     <p class="hero-eyebrow">SMM-дизайн · оформлення соцмереж · Львів</p>
     
-    <!-- Рядок з гіфкою та заголовком -->
     <div class="hero-title-row">
       <img src="animation.gif" alt="Анімація" class="mini-gif">
       <h1>пупупу<span>пупупуп</span> пуппуу.</h1>
@@ -392,7 +378,6 @@
     </div>
   </section>
 
-  <!-- Решта сайту -->
   <section id="services">
     <div class="wrap">
       <div class="section-head">
@@ -497,81 +482,4 @@
         </p>
         <p>
           Працюю з брендами та підприємцями, яким потрібне послідовне оформлення
-          соцмереж — від першого допису до контенту, що виходить щотижня. Слідкую,
-          щоб стиль тримався і в стрічці, і в сторіз, і в короткому відео.
-        </p>
-        <p>
-          Крім замовлень — веду власні експерименти з форматами Reels-обкладинок,
-          щоб бути в курсі того, що зараз працює в стрічці.
-        </p>
-
-        <ul class="tools">
-          <li>Figma <span>макет / шаблони</span></li>
-          <li>Adobe Photoshop <span>растр / ретуш</span></li>
-          <li>Adobe Illustrator <span>вектор / іконки</span></li>
-          <li>After Effects <span>анімовані банери</span></li>
-          <li>Canva Pro <span>швидкі шаблони</span></li>
-          <li>Meta Business Suite <span>публікація</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <h2>Час, щоб стрічка почала працювати на бренд? Напишемо разом.</h2>
-      <div class="contact-row">
-        <a class="contact-email" href="mailto:your.email@example.com">your.email@example.com</a>
-        <ul class="socials">
-          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="#" target="_blank" rel="noopener">Behance</a></li>
-          <li><a href="#" target="_blank" rel="noopener">Telegram</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="wrap">
-  <p>© <span id="year"></span> Твоє Ім'я</p>
-  <a href="#hero">Наверх</a>
-</footer>
-
-<script>
-  (function(){
-    "use strict";
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    var toggle = document.querySelector(".nav-toggle");
-    var links = document.getElementById("nav-links");
-    toggle.addEventListener("click", function(){
-      var open = links.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-    links.querySelectorAll("a").forEach(function(a){
-      a.addEventListener("click", function(){
-        links.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    var filterButtons = document.querySelectorAll(".filters button");
-    var tiles = document.querySelectorAll(".tile");
-    filterButtons.forEach(function(btn){
-      btn.addEventListener("click", function(){
-        filterButtons.forEach(function(b){ b.setAttribute("aria-pressed", "false"); });
-        btn.setAttribute("aria-pressed", "true");
-        var value = btn.getAttribute("data-filter");
-        tiles.forEach(function(tile){
-          var match = value === "all" || tile.getAttribute("data-category") === value;
-          tile.classList.toggle("is-hidden", !match);
-        });
-      });
-    });
-  })();
-</script>
-
-</body>
-</html>
+          соцмереж — від першого допису до контенту, що
