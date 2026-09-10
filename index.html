@@ -6,15 +6,6 @@
 <title> ПУПУПУПУПУПУ </title>
 <meta name="description" content="Дизайн для соцмереж: оформлення профілю, контент-план, обкладинки Reels, рекламні банери.">
 
-<!--
-  ЯК КОРИСТУВАТИСЯ ЦИМ ФАЙЛОМ
-  1. Заміни "Твоє Ім'я", тексти та проєкти нижче на свої (шукай коментарі ЗАМІНИ).
-  2. Замість кольорових плашок у .tile та .portrait встав свої зображення (<img>).
-  3. Заміни пошту та посилання на соцмережі у секції #contact.
-  4. Постав файл у корінь репозиторію як index.html, увімкни GitHub Pages
-     у Settings → Pages → Source: гілка main / root.
--->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -30,7 +21,7 @@
     --accent-dark: #B23000;
     --accent-2: #234C5E;
     --maxw: 1180px;
-   --font-display: "Noto Sans", sans-serif;
+    --font-display: "Noto Sans", sans-serif;
     --font-body: "Noto Sans", sans-serif;
   }
 
@@ -63,10 +54,12 @@
   a{ color: inherit; }
   ul{ margin:0; padding:0; list-style:none; }
   button{ font-family: inherit; cursor: pointer; }
-header a, header nav a, .nav-links a, header ul a {
+  
+  header a, header nav a, .nav-links a, header ul a {
     font-weight: 700 !important;
     font-size: 24px !important;
-}
+  }
+  
   :focus-visible{
     outline: 2px solid var(--accent);
     outline-offset: 3px;
@@ -90,18 +83,6 @@ header a, header nav a, .nav-links a, header ul a {
     padding: 0 24px;
   }
 
-  /* ---------- ruler (design-tool artboard ruler) ---------- */
-  .ruler{
-    height: 18px;
-    background-image:
-      repeating-linear-gradient(90deg, var(--ink) 0 1px, transparent 1px 10%),
-      repeating-linear-gradient(90deg, transparent 0 calc(2% - 1px), var(--ink) calc(2% - 1px) 2%);
-    background-position: top left, bottom left;
-    background-size: 100% 8px, 100% 4px;
-    background-repeat: repeat-x;
-    opacity: .35;
-  }
-
   /* ---------- header ---------- */
   header{
     position: sticky; top: 0; z-index: 100;
@@ -111,20 +92,20 @@ header a, header nav a, .nav-links a, header ul a {
   }
   .nav{
     display: flex; align-items: center; justify-content: space-between;
-    height: auto; /* замість фіксованих 68px */
-    padding: 16px 0; /* робимо відступи зверху і знизу */
+    height: auto;
+    padding: 16px 0;
   }
   .logo{
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.05rem;
     text-decoration: none;
-}
- .logo-img {
+  }
+  .logo-img {
     height: 70px;
     width: auto;
     display: block;
-}
+  }
   .nav-links{
     display:flex; gap: 32px;
   }
@@ -160,74 +141,21 @@ header a, header nav a, .nav-links a, header ul a {
     .nav-links a{ padding: 16px 24px; border-bottom: 1px solid var(--line); }
   }
 
-  /* ---------- hero ---------- */
+  /* ---------- hero з гіфкою ---------- */
   .hero{
-    display:grid;
-    grid-template-columns: 1.1fr .9fr;
-    gap: 48px;
-    align-items:center;
-    padding: 88px 0 96px;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .hero-eyebrow{
-    color: var(--muted);
-    font-size: .95rem;
-    margin-bottom: 18px;
-  }
-  .hero h1{
-    font-size: clamp(2.3rem, 5vw, 4.2rem);
-  }
-  .hero h1 span{ color: var(--accent); }
-  .hero-lede{
-    margin-top: 22px;
-    max-width: 48ch;
-    color: var(--muted);
-    font-size: 1.08rem;
-  }
-  .hero-cta{
-    margin-top: 34px;
-    display:flex; gap: 16px; flex-wrap: wrap;
-  }
-  .btn{
-    display:inline-block;
-    padding: 13px 24px;
-    text-decoration:none;
-    border: 1px solid var(--ink);
-    font-size: .95rem;
-    transition: background .15s ease, color .15s ease;
-  }
-  .btn-primary{ background: var(--ink); color: var(--bg); }
-  .btn-primary:hover{ background: var(--accent); border-color: var(--accent); color: #fff; }
-  .btn-ghost:hover{ background: var(--ink); color: var(--bg); }
-
-  /* ---------- feed preview (hero visual, grounded in SMM subject) ---------- */
-  .feed-stage{
-    display:flex; flex-direction:column; align-items:center; gap: 14px;
-  }
-  .feed{
-    width: 260px;
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  .feed__cell{
-    aspect-ratio: 1/1;
-    transition: transform .3s ease;
-    transition-delay: calc(var(--i) * 30ms);
-  }
-  .feed-stage:hover .feed__cell{ transform: scale(.94); }
-  .feed-caption{
-    font-family: var(--font-display);
-    font-size: .8rem;
-    color: var(--muted);
-    letter-spacing: .02em;
-  }
-
-  @media (max-width: 900px){
-    .hero{ grid-template-columns: 1fr; padding-top: 56px; }
-    .feed-stage{ order:-1; }
-    .feed{ width: 220px; }
+  .left-gif {
+    width: 320px;
+    height: 320px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   }
 
   /* ---------- section shell ---------- */
@@ -259,37 +187,21 @@ header a, header nav a, .nav-links a, header ul a {
     .service-row .service-note{ white-space: normal; }
   }
 
-  /* ---------- work / bento grid (mimics feed & stories formats) ---------- */
-  .filters{ display:flex; gap: 10px; flex-wrap: wrap; }
-  .filters button{
-    background: none; border: 1px solid var(--line);
-    padding: 8px 16px; font-size: .88rem; color: var(--muted);
-  }
-  .filters button[aria-pressed="true"]{
-    border-color: var(--ink); color: var(--ink); background: var(--bg-panel);
-  }
-
+  /* ---------- work grid ---------- */
   .grid{
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 220px;
-    gap: 1px;
-    background: var(--line);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
   .tile{
-    position:relative;
-    grid-column: span 1;
-    grid-row: span 1;
-    display:block;
-    text-decoration:none;
-    color: #fff;
-    overflow:hidden;
-    background: var(--ink);
+    position: relative;
+    background: #eee;
+    min-height: 240px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
   }
-  .tile--lg{ grid-column: span 2; grid-row: span 2; }
-  .tile--wide{ grid-column: span 2; grid-row: span 1; }
-  .tile--tall{ grid-column: span 1; grid-row: span 2; }
-
   .tile__art{
     position:absolute; inset:0;
     transition: transform .4s ease;
@@ -300,6 +212,7 @@ header a, header nav a, .nav-links a, header ul a {
     position:absolute; left:0; right:0; bottom:0;
     padding: 16px 18px;
     background: linear-gradient(0deg, rgba(0,0,0,.55), transparent);
+    color: #fff;
   }
   .tile__title{ font-family: var(--font-display); font-size: 1rem; font-weight: 600; }
   .tile__tag{ font-size: .8rem; opacity: .85; margin-top: 4px; display:block; }
@@ -386,21 +299,13 @@ header a, header nav a, .nav-links a, header ul a {
   }
   footer a{ text-decoration:none; color: var(--muted); }
   footer a:hover{ color: var(--ink); }
-    /* Вставляй сюди */
-  h1 {
-        font-family: "Noto Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 700;
-        font-style: normal;
-        font-variation-settings: "wdth" 100;
-    }
-    header {
-        font-family: "Noto Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 700;
-        font-style: normal;
-        font-variation-settings: "wdth" 100;
-    }
+
+  h1, header {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
 </style>
 </head>
 <body>
@@ -409,8 +314,7 @@ header a, header nav a, .nav-links a, header ul a {
 
 <header>
   <nav class="nav wrap">
-    <!-- ЗАМІНИ логотип -->
-   <a class="logo" href="#hero"><img src="images/logo_09.png" alt="Назва бренду" class="logo-img"></a>
+    <a class="logo" href="#hero"><img src="images/logo_09.png" alt="Назва бренду" class="logo-img"></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Відкрити меню">
       <span class="visually-hidden">Меню</span>
     </button>
@@ -425,35 +329,9 @@ header a, header nav a, .nav-links a, header ul a {
 
 <main id="main">
 
+  <!-- ГОЛОВНА СЕКЦІЯ З ГІФКОЮ -->
   <section id="hero" class="hero wrap" style="border-top:none;">
-    <div>
-      <p class="hero-eyebrow">SMM-дизайн · оформлення соцмереж · Львів</p>
-      <!-- ЗАМІНИ заголовок і опис -->
-      <h1>пупупу<span>пупупуп</span> пуппуу.</h1>
-      <p class="hero-lede">
-        Оформлення профілю, контент-план, обкладинки для Reels і рекламні банери —
-        так, щоб бренд впізнавали з першого поста.
-      </p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#services">Переглянути послуги</a>
-        <a class="btn btn-ghost" href="#contact">Замовити оформлення</a>
-      </div>
-    </div>
-
-    <div class="feed-stage">
-      <div class="feed" aria-hidden="true">
-        <div class="feed__cell" style="--i:0; background:linear-gradient(135deg,#FF4B1F,#B23000);"></div>
-        <div class="feed__cell" style="--i:1; background:linear-gradient(135deg,#234C5E,#0F262F);"></div>
-        <div class="feed__cell" style="--i:2; background:linear-gradient(135deg,#63645C,#16181A);"></div>
-        <div class="feed__cell" style="--i:3; background:linear-gradient(135deg,#B23000,#FF4B1F);"></div>
-        <div class="feed__cell" style="--i:4; background:linear-gradient(135deg,#16181A,#63645C);"></div>
-        <div class="feed__cell" style="--i:5; background:linear-gradient(135deg,#0F262F,#234C5E);"></div>
-        <div class="feed__cell" style="--i:6; background:linear-gradient(135deg,#FF4B1F,#16181A);"></div>
-        <div class="feed__cell" style="--i:7; background:linear-gradient(135deg,#234C5E,#63645C);"></div>
-        <div class="feed__cell" style="--i:8; background:linear-gradient(135deg,#B23000,#0F262F);"></div>
-      </div>
-      <p class="feed-caption">Прев'ю стрічки</p>
-    </div>
+    <img src="назва_твоєї_гіфки.gif" alt="Анімація" class="left-gif">
   </section>
 
   <section id="services">
@@ -461,7 +339,6 @@ header a, header nav a, .nav-links a, header ul a {
       <div class="section-head">
         <h2>Послуги</h2>
       </div>
-      <!-- ЗАМІНИ послуги, описи та терміни/ціни -->
       <div class="services">
         <div class="service-row">
           <h3>Оформлення профілю</h3>
@@ -504,7 +381,6 @@ header a, header nav a, .nav-links a, header ul a {
         </div>
       </div>
 
-      <!-- ЗАМІНИ: кожен .tile__art — це заглушка; постав туди <img> зі своїм макетом -->
       <div class="grid" id="workGrid">
         <a class="tile tile--lg" href="#" data-category="feed">
           <div class="tile__art" style="background:linear-gradient(135deg,#FF4B1F,#B23000);"></div>
@@ -554,14 +430,12 @@ header a, header nav a, .nav-links a, header ul a {
 
   <section id="about">
     <div class="wrap about">
-      <!-- ЗАМІНИ на своє фото: <img src="..." alt="Твоє ім'я"> -->
       <div class="portrait">Постав сюди своє фото</div>
       <div class="about-body">
         <h2>Про мене</h2>
         <p class="about-lede">
           Я дизайнер, який думає стрічкою: як пости виглядають поруч, а не лише поодинці.
         </p>
-        <!-- ЗАМІНИ біографію -->
         <p>
           Працюю з брендами та підприємцями, яким потрібне послідовне оформлення
           соцмереж — від першого допису до контенту, що виходить щотижня. Слідкую,
@@ -588,10 +462,8 @@ header a, header nav a, .nav-links a, header ul a {
     <div class="wrap">
       <h2>Час, щоб стрічка почала працювати на бренд? Напишемо разом.</h2>
       <div class="contact-row">
-        <!-- ЗАМІНИ пошту -->
         <a class="contact-email" href="mailto:your.email@example.com">your.email@example.com</a>
         <ul class="socials">
-          <!-- ЗАМІНИ посилання -->
           <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="#" target="_blank" rel="noopener">Behance</a></li>
           <li><a href="#" target="_blank" rel="noopener">Telegram</a></li>
@@ -611,10 +483,8 @@ header a, header nav a, .nav-links a, header ul a {
   (function(){
     "use strict";
 
-    // рік у футері
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // мобільне меню
     var toggle = document.querySelector(".nav-toggle");
     var links = document.getElementById("nav-links");
     toggle.addEventListener("click", function(){
@@ -628,7 +498,6 @@ header a, header nav a, .nav-links a, header ul a {
       });
     });
 
-    // фільтр робіт
     var filterButtons = document.querySelectorAll(".filters button");
     var tiles = document.querySelectorAll(".tile");
     filterButtons.forEach(function(btn){
