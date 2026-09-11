@@ -143,21 +143,20 @@
 
   /* ---------- hero ---------- */
 .hero {
+  position: relative; /* Робимо головний блок «якорем» */
   padding: 88px 0 96px;
   max-width: 900px;
   margin: 0 auto;
-  text-align: left; /* Вирівнюємо весь блок по лівому краю */
+  text-align: center;
 }
 
 .hero-eyebrow {
-  display: block;
-  text-align: left;
-  font-size: clamp(0.85rem, 2.5vw, 1.15rem);
+  position: absolute;  /* Вибиваємо текст із загального потоку */
+  left: 15px;          /* Притискаємо до лівого краю на ~1 см */
+  top: 30px;           /* Відступ зверху від початку секції */
+  font-size: clamp(0.85rem, 2.2vw, 1.15rem);
   font-weight: 200;
   white-space: nowrap;
-  margin-top: 15px;
-  margin-bottom: 25px;
-  margin-left: -150px; /* Замість 150px підстав точне число у пікселях, щоб зрушити його на 1 см ліворуч від блоку */
 }
 .hero-title-row {
   margin: 0 auto;
