@@ -145,15 +145,16 @@
 .hero {
   padding: 88px 0 96px;
   max-width: 900px;
-  margin: 0 auto;       /* Центрує весь блок по серединці екрана */
-  text-align: left;
+  margin: 0 auto;
+  text-align: left; /* Вирівнюємо весь блок по лівому краю */
 }
+
 .hero-eyebrow {
-  display: inline-block;
-  text-align: left;
-  font-size: clamp(0.9rem, 1.8vw, 1.25rem);
-  font-weight: 600;
-  white-space: nowrap;
+  display: block;
+  text-align: left; /* Притискає текст до лівого краю сітки */
+  font-size: clamp(0.85rem, 2.5vw, 1.15rem);
+  font-weight: 200;
+  white-space: nowrap; /* Тримає в один рядок без скролу */
   margin-top: 15px;
   margin-bottom: 25px;
 }
