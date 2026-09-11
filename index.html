@@ -149,9 +149,14 @@
   text-align: center;   /* Центрує текст всередині */
 }
 .hero-eyebrow {
-  width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   text-align: center;
-  font-size: 1.8vw;
+  font-size: clamp(0.7rem, 1.4vw, 1.15rem);
   white-space: nowrap;
   margin-top: 10px;
   margin-bottom: 20px;
