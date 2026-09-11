@@ -159,8 +159,8 @@
   white-space: nowrap;       /* Забороняє переносити текст */
   margin-top: 20px;
   margin-bottom: 25px;
-  padding-left: 20vw;          /* Відступ від лівого краю екрана (можеш змінити на свій розсуд, наприклад, 20px) */
-  padding-right: 5px;
+  padding-left: max(20px, calc((100vw - 900px) / 2)); /* Автоматично вирівнює по загальній сітці сайту */
+  padding-right: 20px;
 }
 .hero-title-row {
   margin: 0 auto;
