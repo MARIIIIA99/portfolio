@@ -149,17 +149,18 @@
   text-align: center;   /* Центрує текст всередині */
 }
 .hero-eyebrow {
-  width: 100vw;
-  position: relative;
-  left: 5%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  text-align: center;
-  font-size: clamp(1.7rem, 1.4vw, 2.5rem);
-  white-space: nowrap;
-  margin-top: 5px;
-  margin-bottom: 20px;
+  width: 100%;               /* Розтягує на всю ширину */
+  text-align: left;           /* Вирівнювання по лівому краю */
+  /* ТУТ МИ ЗБІЛЬШУЄМО ТЕКСТ: */
+  /* Мінімальний 1.1rem, ідеальний 2.5vw, максимальний 1.4rem */
+  /* Змінюй середнє значення (2.5vw), щоб зробити його ще більшим */
+  font-size: clamp(1.1rem, 2.8vw, 1.4rem);
+  font-weight: 300;          /* Робимо трохи жирнішим для помітності */
+  white-space: nowrap;       /* Забороняє переносити текст */
+  margin-top: 20px;
+  margin-bottom: 25px;
+  padding-left: 5vw;          /* Відступ від лівого краю екрана (можеш змінити на свій розсуд, наприклад, 20px) */
+  padding-right: 5px;
 }
 .hero-title-row {
   margin: 0 auto;
