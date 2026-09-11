@@ -152,9 +152,9 @@
   width: 100%;
   max-width: 100%;
   text-align: center;
-  font-size: 0.95rem;     /* Робимо трохи компактнішим, щоб влізло в один рядок */
+  font-size: clamp(0.6rem, 1.35vw, 1rem); /* Автоматично підганяє розмір під ширину екрана */
   font-weight: 500;
-  white-space: nowrap;    /* ЗАБОРОНЯЄ перенесення слів на новий рядок */
+  white-space: nowrap;                    /* Тримає все строго в один рядок */
   margin-top: 10px;
   margin-bottom: 30px;
   padding: 0 10px;
