@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> пупупупу </title>
+<meta name="description" content="Дизайн для соцмереж: оформлення профілю, контент-план, обкладинки Reels, рекламні банери.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #E7E8E2;
+    --bg-panel: #DEDFD7;
+    --ink: #16181A;
+    --muted: #63645C;
+    --line: rgba(22,24,26,.16);
+    --accent: #FF4B1F;
+    --accent-dark: #B23000;
+    --accent-2: #234C5E;
+    --maxw: 1180px;
+    --font-display: "Noto Sans", sans-serif;
+    --font-body: "Noto Sans", sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,h2,h3{
+    font-family: var(--font-display);
+    margin: 0;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+
+  p{ margin: 0; }
+  a{ color: inherit; }
+  ul{ margin:0; padding:0; list-style:none; }
+  button{ font-family: inherit; cursor: pointer; }
+  
+  header a, header nav a, .nav-links a, header ul a {
+    font-weight: 700 !important;
+    font-size: 24px !important;
+  }
+  
+  :focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .visually-hidden{
+    position:absolute; width:1px; height:1px; overflow:hidden;
+    clip:rect(0 0 0 0); white-space:nowrap;
+  }
+
+  .skip-link{
+    position:absolute; top:-40px; left:8px; z-index:200;
+    background: var(--ink); color: var(--bg);
+    padding: 8px 14px; font-family: var(--font-body); font-size: .9rem;
+  }
+  .skip-link:focus{ top: 46px; }
+
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display: flex; align-items: center; justify-content: space-between;
+    height: auto;
+    padding: 16px 0;
+  }
+  .logo{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+  }
+  .logo-img {
+    height: 70px;
+    width: auto;
+    display: block;
+  }
+  .nav-links{
+    display:flex; gap: 32px;
+  }
+  .nav-links a{
+    text-decoration:none;
+    font-size: .95rem;
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .nav-links a:hover{ border-color: var(--accent); }
+
+  .nav-toggle{
+    display:none;
+    background:none; border: 1px solid var(--line); padding: 8px 10px;
+  }
+  .nav-toggle span, .nav-toggle::before, .nav-toggle::after{
+    content:""; display:block; width: 20px; height: 2px; background: var(--ink);
+    margin: 4px 0;
+  }
+
+  @media (max-width: 760px){
+    .nav-toggle{ display:block; }
+    .nav-links{
+      position:absolute; top: 68px; left:0; right:0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      flex-direction: column; gap: 0;
+      max-height: 0; overflow:hidden;
+      transition: max-height .25s ease;
+    }
+    .nav-links.is-open{ max-height: 300px; }
+    .nav-links a{ padding: 16px 24px; border-bottom: 1px solid var(--line); }
+  }
+
+  /* ---------- hero ---------- */
+.hero {
+  position: relative; /* Робимо головний блок «якорем» */
+  padding: 88px 0 96px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  position: absolute;
+
+  /* Підтягуємо текст ближче до хедера */
+  top: 8px;
+
+  /* Розтягуємо майже на всю ширину екрана */
+  left: 50%;
+  width: calc(100vw - 16px);
+  transform: translateX(-50%);
+
+  /* Однаковий мінімальний відступ зліва і справа */
+  text-align: center;
+  white-space: nowrap;
+
+  /* Трохи більший текст */
+  font-size: clamp(1.65rem, 2.55vw, 2.35rem);
+  font-weight: 200;
+}
+.hero-title-row {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Ставимо гіфку зверху, а текст знизу (або навпаки) */
+  align-items: center;    /* Вирівнює по центру по горизонталі */
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+  max-width: 900px;
+}
+
+.mini-gif {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 1.4rem !important;
+}
+  .hero h1 span{ color: var(--accent); }
+  
+  .hero-lede{
+    margin-top: 22px;
+    max-width: 48ch;
+    color: var(--muted);
+    font-size: 1.08rem;
+  }
+  .hero-cta{
+    margin-top: 34px;
+    display:flex; gap: 16px; flex-wrap: wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding: 13px 24px;
+    text-decoration:none;
+    border: 1px solid var(--ink);
+    font-size: .95rem;
+    transition: background .15s ease, color .15s ease;
+  }
+  .btn-primary{ background: var(--ink); color: var(--bg); }
+  .btn-primary:hover{ background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn-ghost:hover{ background: var(--ink); color: var(--bg); }
+
+  /* ---------- решта стилів сайту ---------- */
+  section{ padding: 88px 0; border-top: 1px solid var(--line); }
+  .section-head{
+    display:flex; align-items:flex-end; justify-content:space-between;
+    gap: 24px; flex-wrap: wrap;
+    margin-bottom: 44px;
+  }
+  .section-head h2{ font-size: clamp(1.7rem, 3vw, 2.4rem); }
+
+  .services{ display:flex; flex-direction:column; }
+  .service-row{
+    display:grid;
+    grid-template-columns: 2fr 3fr auto;
+    gap: 24px;
+    align-items:center;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+  }
+  .services .service-row:last-child{ border-bottom: 1px solid var(--line); }
+  .service-row h3{ font-size: 1.15rem; }
+  .service-row p{ color: var(--muted); font-size: .95rem; max-width: 52ch; }
+  .service-row .service-note{ color: var(--muted); font-size: .9rem; white-space: nowrap; }
+
+  @media (max-width: 700px){
+    .service-row{ grid-template-columns: 1fr; gap: 8px; }
+    .service-row .service-note{ white-space: normal; }
+  }
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .tile{
+    position: relative;
+    background: #eee;
+    min-height: 240px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+  }
+  .tile__art{
+    position:absolute; inset:0;
+    transition: transform .4s ease;
+  }
+  .tile:hover .tile__art{ transform: scale(1.04); }
+
+  .tile__meta{
+    position:absolute; left:0; right:0; bottom:0;
+    padding: 16px 18px;
+    background: linear-gradient(0deg, rgba(0,0,0,.55), transparent);
+    color: #fff;
+  }
+  .tile__title{ font-family: var(--font-display); font-size: 1rem; font-weight: 600; }
+  .tile__tag{ font-size: .8rem; opacity: .85; margin-top: 4px; display:block; }
+  .tile.is-hidden{ display:none; }
+
+  @media (max-width: 820px){
+    .grid{ grid-template-columns: repeat(2, 1fr); }
+    .tile--lg{ grid-column: span 2; grid-row: span 2; }
+    .tile--wide{ grid-column: span 2; }
+    .tile--tall{ grid-column: span 1; grid-row: span 2; }
+  }
+  @media (max-width: 520px){
+    .grid{ grid-template-columns: 1fr; }
+    .tile, .tile--lg, .tile--wide, .tile--tall{ grid-column: span 1; grid-row: span 1; min-height: 240px; }
+  }
+
+  .about{
+    display:grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 56px;
+  }
+  .portrait{
+    aspect-ratio: 4/5;
+    background:
+      repeating-linear-gradient(135deg, var(--accent-2) 0 2px, transparent 2px 14px),
+      var(--bg-panel);
+    display:flex; align-items:flex-end; padding: 16px;
+    color: var(--muted); font-size: .85rem;
+    border: 1px solid var(--line);
+  }
+  .about-body p + p{ margin-top: 18px; }
+  .about-body{ max-width: 62ch; color: var(--ink); }
+  .about-lede{ font-size: 1.15rem; }
+
+  /* Блок для іконок: сітка 3 колонки */
+.tools {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 30px;          /* Це загальний відступ між усіма елементами */
+    row-gap: 75px;      /* А це відстань саме по вертикалі (між рядами) — збільшуй цифру до потрібної */
+  }
+
+  /* Налаштування самих картинок-іконок */
+  .tools img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    background: transparent !important; /* Гарантує відсутність будь-якого фону */
+  }
+
+  @media (max-width: 760px){
+    .about{ grid-template-columns: 1fr; }
+    .tools{ grid-template-columns: 1fr; }
+  }
+/* Контейнер підказки */
+.tooltip-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Сам текст підказки, який з'являється при наведенні */
+.tooltip-wrap::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: #ffffff;    /* Білий фон */
+  color: #111111;         /* Чорний текст */
+  padding: 8px 16px;
+  font-size: 15px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+/* Плавна поява при наведенні */
+.tooltip-wrap:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+  .contact{
+    background: var(--ink);
+    color: var(--bg);
+    border-top: 1px solid var(--line);
+  }
+  .contact h2{ font-size: clamp(1.8rem, 4vw, 3rem); max-width: 20ch; }
+  .contact-row{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap: 24px; flex-wrap:wrap;
+    margin-top: 40px;
+  }
+  .contact-email{
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    text-decoration:none;
+    border-bottom: 1px solid var(--accent);
+  }
+  .socials{ display:flex; gap: 20px; }
+  .socials a{ text-decoration:none; color: var(--bg); opacity:.8; font-size:.95rem; }
+  .socials a:hover{ opacity:1; border-bottom: 1px solid var(--accent); }
+
+  footer{
+    padding: 28px 0;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size: .85rem; color: var(--muted);
+    flex-wrap: wrap; gap: 12px;
+  }
+  footer a{ text-decoration:none; color: var(--muted); }
+  footer a:hover{ color: var(--ink); }
+
+  h1, header {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Перейти до змісту</a>
+
+<header>
+  <nav class="nav wrap">
+    <a class="logo" href="#hero"><img src="images/logo_09.png" alt="Назва бренду" class="logo-img"></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Відкрити меню">
+      <span class="visually-hidden">Меню</span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#services">Послуги</a></li>
+      <li><a href="#work">Роботи</a></li>
+      <li><a href="#about">Про мене</a></li>
+      <li><a href="#contact">Контакти</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section id="hero" class="hero wrap" style="border-top:none;">
+    <p class="hero-eyebrow">SMMдизайн✦   дизайн упаковки і мерчу❀    дизацн бренду❆    3Dmodeling☆    2Dграфіка☯    дизайн поліграфії✟</p>
+    
+    <div class="hero-title-row">
+     <img src="animation.gif" alt="Анімація" class="mini-gif" style="border-radius: 50% !important;">
+     <h1>напишіть мені <span>щоб обговорити проєкт</span> або отримати бриф</h1>
+    </div>
+
+<div class="tools">
+  <a href="#link1" class="tooltip-wrap" data-tooltip="поліграфія"><img src="гранат.png" alt="Гранат"></a>
+  <a href="#link2" class="tooltip-wrap" data-tooltip="3D-моделі"><img src="кубики.png" alt="Кубики"></a>
+  <a href="#link3" class="tooltip-wrap" data-tooltip="брендбуки"><img src="скриня.png" alt="Скриня"></a>
+  <a href="#link4" class="tooltip-wrap" data-tooltip="упаковка і мерч"><img src="кінь.png" alt="Кінь"></a>
+  <a href="#link5" class="tooltip-wrap" data-tooltip="Оформлення соцмереж"><img src="телефон.png" alt="Телефон"></a>
+  <a href="#link6" class="tooltip-wrap" data-tooltip="ілюстрації"><img src="булка.png" alt="Булка"></a>
+</div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Послуги</h2>
+      </div>
+      <div class="services">
+        <div class="service-row">
+          <h3>Оформлення профілю</h3>
+          <p>Стиль сторінки, аватар, шапка, хайлайтси та шаблони для стрічки, які легко повторювати самостійно.</p>
+          <span class="service-note">від 3 днів</span>
+        </div>
+        <div class="service-row">
+          <h3>Контент-план на місяць</h3>
+          <p>12–20 постів і сторіз за єдиним стилем: від макета до готових файлів у форматах для публікації.</p>
+          <span class="service-note">від 7 днів</span>
+        </div>
+        <div class="service-row">
+          <h3>Обкладинки для Reels і TikTok</h3>
+          <p>Серія впізнаваних обкладинок, які тримають стиль сторінки навіть у форматі коротких відео.</p>
+          <span class="service-note">від 2 днів</span>
+        </div>
+        <div class="service-row">
+          <h3>Рекламні банери</h3>
+          <p>Статичні та анімовані креативи для таргету: кілька форматів під стрічку, сторіз і рекламну мережу.</p>
+          <span class="service-note">від 3 днів</span>
+        </div>
+        <div class="service-row">
+          <h3>Гайдлайн для соцмереж</h3>
+          <p>Палітра, шрифти, сітка та приклади використання — документ, який можна передати будь-якому дизайнеру.</p>
+          <span class="service-note">від 5 днів</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Вибрані роботи</h2>
+        <div class="filters" role="group" aria-label="Фільтр за форматом">
+          <button type="button" data-filter="all" aria-pressed="true">Усі</button>
+          <button type="button" data-filter="feed" aria-pressed="false">Стрічка</button>
+          <button type="button" data-filter="stories" aria-pressed="false">Сторіз</button>
+          <button type="button" data-filter="reels" aria-pressed="false">Reels</button>
+        </div>
+      </div>
+
+      <div class="grid" id="workGrid">
+        <a class="tile tile--lg" href="#" data-category="feed">
+          <div class="tile__art" style="background:linear-gradient(135deg,#FF4B1F,#B23000);"></div>
+          <div class="tile__meta">
+            <span class="tile__title">Стрічка для кав'ярні «Промінь»</span>
+            <span class="tile__tag">Стрічка · 2024</span>
+          </div>
+        </a>
+        <a class="tile tile--tall" href="#" data-category="stories">
+          <div class="tile__art" style="background:linear-gradient(135deg,#234C5E,#0F262F);"></div>
+          <div class="tile__meta">
+            <span class="tile__title">Сторіз-серія: анонс акції</span>
+            <span class="tile__tag">Сторіз · 2024</span>
+          </div>
+        </a>
+        <a class="tile" href="#" data-category="reels">
+          <div class="tile__art" style="background:linear-gradient(135deg,#63645C,#16181A);"></div>
+          <div class="tile__meta">
+            <span class="tile__title">Обкладинки Reels: рецепти</span>
+            <span class="tile__tag">Reels · 2023</span>
+          </div>
+        </a>
+        <a class="tile" href="#" data-category="feed">
+          <div class="tile__art" style="background:linear-gradient(135deg,#B23000,#FF4B1F);"></div>
+          <div class="tile__meta">
+            <span class="tile__title">Банер для розпродажу</span>
+            <span class="tile__tag">Стрічка · 2023</span>
+          </div>
+        </a>
+        <a class="tile tile--wide" href="#" data-category="stories">
+          <div class="tile__art" style="background:linear-gradient(135deg,#0F262F,#234C5E);"></div>
+          <div class="tile__meta">
+            <span class="tile__title">Контент-план: космо-бренд</span>
+            <span class="tile__tag">Сторіз · 2023</span>
+          </div>
+        </a>
+        <a class="tile" href="#" data-category="reels">
+          <div class="tile__art" style="background:linear-gradient(135deg,#16181A,#63645C);"></div>
+          <div class="tile__meta">
+            <span class="tile__title">TikTok-обкладинка: подкаст</span>
+            <span class="tile__tag">Reels · 2022</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div class="portrait">Постав сюди своє фото</div>
+      <div class="about-body">
+        <h2>Про мене</h2>
+        <p class="about-lede">
+          Я дизайнер, який думає стрічкою: як пости виглядають поруч, а не лише поодинці.
+        </p>
+        <p>
+          Працюю з брендами та підприємцями, яким потрібне послідовне оформлення
+          соцмереж — від першого допису до контенту.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div>© 2026
