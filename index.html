@@ -151,12 +151,23 @@
 }
 
 .hero-eyebrow {
-  position: absolute;  /* Вибиваємо текст із загального потоку */
-  left: -80px; /* Піджени це число, щоб текст виїхав ліворуч на потрібну відстань від контейнера */
-  top: 25px;           /* Відступ зверху від початку секції */
-  font-size: clamp(1.85rem, 2.8vw, 1.85rem);
-  font-weight: 200;
+  position: absolute;
+
+  /* Підтягуємо текст ближче до хедера */
+  top: 8px;
+
+  /* Розтягуємо майже на всю ширину екрана */
+  left: 50%;
+  width: calc(100vw - 16px);
+  transform: translateX(-50%);
+
+  /* Однаковий мінімальний відступ зліва і справа */
+  text-align: center;
   white-space: nowrap;
+
+  /* Трохи більший текст */
+  font-size: clamp(1.65rem, 2.55vw, 2.35rem);
+  font-weight: 200;
 }
 .hero-title-row {
   margin: 0 auto;
