@@ -155,25 +155,25 @@
       text-align: center;
 }
 
-  .hero-title-row {
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 0;
-  }
-  .mini-gif {
- width: 100px;
+.hero-title-row {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Ставимо гіфку зверху, а текст знизу (або навпаки) */
+  align-items: center;    /* Вирівнює по центру по горизонталі */
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+  max-width: 900px;
+}
+
+.mini-gif {
+  width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  flex-shrink: 0;
-  /* Додаємо ці два рядки для центрування: */
-  margin-left: auto;
-  margin-right: auto;
   display: block;
-  }
+  margin: 0 auto;
+}
 
   .hero h1{
     font-size: clamp(2.3rem, 5vw, 4.2rem);
